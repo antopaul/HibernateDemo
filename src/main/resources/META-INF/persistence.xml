@@ -1,0 +1,39 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0">
+	<persistence-unit name="HibernateTest"
+		transaction-type="RESOURCE_LOCAL">
+		<!-- Persistence provider -->
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+		<!-- Entity classes -->
+		<class>test.hibernate.interceptor.Student</class>
+
+		<properties>
+			<!-- The JDBC URL to the database instance -->
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:postgresql://localhost:5432/postgres" />
+
+			<!-- The database username -->
+			<property name="javax.persistence.jdbc.user" value="postgres" />
+
+			<!-- The database password -->
+			<property name="javax.persistence.jdbc.password" value="postgres123" />
+
+			<property name="hibernate.dialect"
+				value="org.hibernate.dialect.PostgreSQLDialect" />
+
+			<property name="hibernate.id.new_generator_mappings"
+				value="false" />
+
+			<property name="hibernate.session_factory.interceptor"
+				value="test.hibernate.interceptor.DAOInterceptor" />
+
+			<property
+				name="hibernate.session_factory.statement_inspector"
+				value="test.hibernate.interceptor.DAOStatementInspector" />
+
+		</properties>
+	</persistence-unit>
+</persistence>
