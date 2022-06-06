@@ -1,5 +1,5 @@
 # HibernateDemo
-Hibernate  Sample application using PostgreSQL database including interceptor and statement inspector.
+Hibernate 5 Sample application using PostgreSQL database including interceptor and statement inspector.
 
 To create table
 
