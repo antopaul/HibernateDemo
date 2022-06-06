@@ -25,17 +25,6 @@ public class StudentDetail implements Serializable {
 	@Column(name = "student_age", nullable = false)
 	private int age;
 	
-	@Column(name = "tenant_id", nullable = true)
-	private String tenantId;
-
-	public String getTenantId() {
-		return tenantId;
-	}
-
-	public void setTenantId(String tenantId) {
-		this.tenantId = tenantId;
-	}
-
 	public int getId() {
 		return id;
 	}
